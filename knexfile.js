@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+// eslint-disable-next-line no-undef
 const pgConnection = process.env.DATABASE_URL || "postgresql://postgres@localhost/auth";
 
 module.exports = {

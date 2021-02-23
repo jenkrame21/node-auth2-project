@@ -4,14 +4,18 @@
   "description": "## Introduction",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jenkrame21/node-auth2-project.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jennifer Kramer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jenkrame21/node-auth2-project/issues"
