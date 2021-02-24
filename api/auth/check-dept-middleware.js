@@ -1,6 +1,6 @@
 
-module.exports = (dept) => (req, res, next) => {
-    if(req.decodedToken.dept === dept) {
+module.exports = (department) => (req, res, next) => {
+    if(req.decodedToken.department === department) {
         next();
     } else {
         res.status(403).json({

@@ -74,7 +74,7 @@ function makeToken(user) {
     const payload = {
         subject: user.id,
         username: user.username,
-        dept: user.dept
+        department: user.department
     };
     const options = {
         expiresIn: "500s"

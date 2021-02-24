@@ -9,14 +9,14 @@ module.exports = {
 
 function find() {
     return db("users as u")
-        .join("roles as r", "u.role", "=", "r.id")
-        .select("u.id", "u.username", "r.name as role");
+        .join("department as d", "u.department", "=", "r.id")
+        .select("u.id", "u.username", "r.name as department");
 }
 
 function findBy(filter) {
     return db("users as u")
-        .join("roles as r", "u.role", "=", "r.id")
-        .select("u.id", "u.username", "r.name as role", "u.password")
+        .join("department as d", "u.department", "=", "d.id")
+        .select("u.id", "u.username", "r.name as department", "u.password")
         .where(filter);
 }
 
@@ -27,8 +27,8 @@ async function add(user) {
 
 function findById(id) {
     return db("users as u")
-        .join("roles as r", "u.role", "=", "r.id")
-        .select("u.id", "u.username", "r.name as role")
+        .join("department as d", "u.department", "=", "d.id")
+        .select("u.id", "u.username", "d.name as department")
         .where("u.id", id)
         .first();
 }
