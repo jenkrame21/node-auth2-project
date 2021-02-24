@@ -15,9 +15,9 @@ router.post("/register", (req, res) => {
     if(isValid(credentials)) {
         // eslint-disable-next-line no-undef
         const rounds = process.env.BCRYPT_ROUND || 8;
-        credentials.password = hash;
-
+        
         const hash = bcryptjs.hashSync(credentials.password, rounds);
+        credentials.password = hash;
 
         Users.add(credentials)
             .then((user) => {
